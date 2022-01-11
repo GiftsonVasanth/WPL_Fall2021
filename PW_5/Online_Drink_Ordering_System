@@ -1,0 +1,352 @@
+
+
+//Online drink ordering system – Starbucks
+
+
+
+{
+
+    //Collection to Store - Menu/Submenu
+    {
+      Menu
+      {
+
+
+      Menu : 
+      [
+     	{
+          	Menu id : “1”,
+         	Menu_name :”Drinks”,
+          	Sub_Menu : 
+          	[
+   				{
+					Sub_Menu_Id:”1:A”,
+ 					Sub_Menu_Name:”Hot Coffees”,
+					Varieties:
+					[
+	      				{
+							Variety_Id : “1:A:a”,
+							Variety_Name :”Blonde Roast”,
+							Variety_Description:” Lightly roasted coffee that's soft, mellow and flavorful. 
+                                                                     drinking on its own and delicious with milk, sugar or flavored  
+                                                                     with vanilla, caramel or hazelnut”
+                              		Ingredients:”Brewed Coffee”,
+ 		 					Allergens: “Not available”,
+							Customizations_Info: 
+							[
+								
+		  						Size:
+		  						{
+
+		  							Is_Available:"Yes"
+		  							Size_Options:
+									[ 
+
+										{
+											Size_id:"S_1",
+											Size_type:"Short",
+
+										},
+										{
+											Size_id:"S_2",
+											Size_type:"Tall",
+										},
+										{
+											Size_id:"S_3"
+											Size_type:"Grande"
+										},
+										{
+											Size_id:"S_4"
+											Size_type:"Venti"
+										},
+									]
+								}
+								Add_Ins:
+								{
+									Is_Available:"Yes"
+									Add_Ins_Options:
+									[
+										{
+											Add_Ins_Id:"A_1"
+											Add_Ins_name:"Whole_milk"
+										},
+										{
+											Add_Ins_Id:"A_2",
+											Add_Ins_name:"Cream",
+										},
+										{
+											Add_Ins_Id:"A_3",
+											Add_Ins_name:"Coconut_milk",
+										},
+
+									]
+								}
+								Flavors:
+								{
+								 	Is_Available:"Yes"
+								 	Flavors_Options:     
+									[
+										{
+											Flavour_id:"F_1",
+											Flavour_name:"Brown_sugar_syrup"
+										},
+										{
+											Flavour_id:"F_2",
+											Flavour_name:"Caramel_syrup"
+										},
+										{
+											Flavour_id:"F_2",
+											Flavour_name:"Caramel_syrup"
+										},
+										{
+											Flavour_id:"F_3",
+											Flavour_name:"Rasperry_syrup"
+										}
+										
+									]
+								}
+								Toppings:
+								{
+									Is_Available:"Yes"
+									Toppings_Options:
+									[
+
+										{
+											Topping_id:"T_2",
+											Topping_name:"Barista_Cocoa_Powder"
+										},
+										{
+											Topping_id:"T_2",
+											Topping_name:"Caramel_Drizzle"
+										}
+										
+
+									]
+								}
+								Sweeteners:
+								{
+									Is_Available:"Yes"
+									Sweeteners_Options:
+									[
+										{
+											Sweetener_id:"S_1",
+											Sweetener_name:"Honey"
+
+										},
+										{
+											Sweetener_id:"S_2",
+											Sweetener_name:"Cane Sugar"
+
+										}
+									]
+
+
+								}
+								Blends:
+								{
+									Is_Available:"Yes",
+									Blender_Options:
+									[
+										{
+											Blended_id:"B_1",
+											Blended_name:,
+											Quantity:2,
+										},
+
+										{
+											Blended_id:"B_2",
+											Blended_name:,
+											Quantity:2,
+										}
+									]
+								}
+								Milk:
+								{
+									Is_Available:"Yes",
+									Milk_Options:
+									[
+										{
+											Milk_id:"M_1",
+											Milk_type:""
+										},
+										{
+											Milk_id:"M_2",
+											Milk_type:""
+										}
+									]
+								}
+								Juice:
+								{
+									Is_Available:"Yes",
+									Juice_Options:
+									[
+										{
+											Juice_id:"J_1",
+											Juice_type:""
+										},
+										{
+											Juice_type:"M_2",
+											Juice_type:""
+										}
+									]
+								}
+								Tea:
+								{
+									Is_Available:"Yes",
+									Tea_Options:
+									[
+										{
+											Tea_id:"Tea_1",
+											Tea_type:""
+										},
+										{
+											Juice_type:"M_2",
+											Tea_type:""
+										}
+									]
+								}
+  							
+							]
+							Nutrition:
+							{
+								Nutrition_Info: “Nutrition information is calculated based on our standard  
+					   					     recipes. Only changing drink size will update this 	
+					  					     information. Other customizations will not.”,
+								Calories : “5”,	
+								Total Fat:
+									{
+										Saturated Fat:
+										Trans_Fat:
+									}
+
+								
+								Nutrition_Tip:”  2,000 calories a day is used for general nutrition advice, but 
+					                                                                         calorie needs vary”
+					                  Cholestrol:
+					                  Sodium:
+					                  Protein:
+					            }
+					      },
+					      {
+
+					      },
+					]
+				},
+				{
+
+				}
+		]
+	},
+	{
+
+	}
+	]
+	}
+
+    //Collection_to_keep_track_of_all_orders
+	{
+		{
+			Order_id:"O_1",
+			Customer_id:"Cust_1",
+			Cart:
+			["Item_1","Item_2","Item_3"],
+            	location:""
+            	Order_type:["pickup","door-delivery","In-Person"]
+
+		}
+		{
+			Order_id:"O_2",
+			Customer_id:"Cust_2",
+			Cart:
+			["Item_1","Item_2","Item_3"],
+            	location:""
+	            Order_type:["pickup","door-delivery","In-Person"]
+
+
+		}
+		{
+
+		}
+	}
+	{
+		{
+			Customer_id:"Cust_1",
+		    	Customer_name:"AAA",
+		    	Address:"",
+		    	Location:"",
+		    	Contact_#:""    
+
+		}
+		{
+			Customer_id:"Cust_2",
+		    	Customer_name:"BBB",
+		    	Address:"",
+		    	Location:"",
+		    	Contact_#:""    
+
+		}
+
+	    
+	}
+
+    //Customization_Info_to_keep_track_of_price_for_all_customizations
+
+    {
+    		{
+	       	Customization_id:"CC1",
+	       	Menu:"",
+	       	SubMenu:"",
+	       	Variety:"",
+	       	Size:"",
+		  	Add_Ins:"",
+			Flavors:"",
+			Toppings:"",
+			Sweeteners:"",
+			Blends:"",
+			Milk:"",
+			Juice:""
+			Tea:""
+			Total_Price:""
+		}
+		{
+	       	Customization_id:"CC2",
+	       	Menu:"",
+	       	SubMenu:"",
+	       	Variety:"",
+	       	Size:"",
+		  	Add_Ins:"",
+			Flavors:"",
+			Toppings:"",
+			Sweeteners:"",
+			Blends:"",
+			Milk:"",
+			Juice:""
+			Tea:""
+			Price:"$13"
+		}
+    }
+
+    //Collection_to_keep_track_of_all_orders_along_with_price
+    {
+    		{
+    			{
+				Order_id:"O_1",
+				Customer_id:"Cust_1",
+				Customization_id:"CC1"
+				Total_Price:"$30"
+			}
+			{
+				Order_id:"O_2",
+				Customer_id:"Cust_2",
+				Customization_id:"CC2"
+				Total_Price:"$30"
+			}
+
+    		}
+    		
+
+
+    }
+
+
+}

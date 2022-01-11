@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple Map</title>
+    
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDHD5Azdp9yEur5KnVYJAUNf8ZAw6m40F4&libraries=places&callback=findPlace"
+      defer
+    ></script>
+    <style type="text/css">
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      
+      #map {
+        height: 100%;
+      }
+
+      /* Optional: Makes the sample page fill the window. */
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+    <script>
+
+      function findPlace() {
+        var input = document.getElementById('address');
+        let map = new google.maps.places.Autocomplete(input);
+        map.addListener('place_changed',function(){
+            var place=map.getPlace();
+            var latitude = place.geometry['location'].lat();
+            var longitude = place.geometry['location'].lng();
+            nearBy(latitude,longitude)
+        });
+      }
+      
+      let map;
+      function nearBy(latitude,longitude){
+          var latlong = new google.maps.LatLng(latitude,longitude );
+          map = new google.maps.Map(document.getElementById('map'), {
+            center: latlong,
+            zoom: 15,
+            });
+
+          var request = {
+              location: latlong,
+              radius: '1500',
+              type: ['hospital']
+              };
+
+          service = new google.maps.places.PlacesService(map);
+          service.nearbySearch(request, callback);
+    }
+
+    function callback(results, status) {
+        if (status == google.maps.places.PlacesServiceStatus.OK) {
+            for (var i = 0; i < results.length; i++) { 
+
+                new google.maps.Marker({
+                    map,
+                    title: results[i].name,
+                    position: results[i].geometry.location,
+                });
+
+
+        }
+      }
+    }
+      
+    </script>
+  </head>
+  <body>
+      <div>
+          <h3> Enter an address to get Hospitals</h3>
+ 
+          <input id="address" type="text" placeholder="Enter address here" />
+      </div>
+      <br>
+      <div id="map">
+        
+      </div>
+
+  </body>
+</html>

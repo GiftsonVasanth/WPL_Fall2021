@@ -1,0 +1,291 @@
+
+
+//Online drink ordering system – Starbucks
+
+//Collection to Store - Menu/Submenu
+    
+      
+      
+{
+    	Menu : 
+    	[
+     	{
+          	Menu_id : “1”,
+         	Menu_name :”Drinks”,
+          	Sub_Menu : 
+          	[
+   				{
+					Sub_Menu_Id:”1:A”,
+ 					Sub_Menu_Name:”Hot Coffees”,
+					Varieties:
+					[
+	      				{
+							Variety_Id : “1:A:a”,
+							Variety_Name :”Blonde Roast”,
+							Variety_Description:” Lightly roasted coffee that's soft, mellow and flavorful. 
+                                                                     drinking on its own and delicious with milk, sugar or flavored  
+                                                                     with vanilla, caramel or hazelnut”
+                              				Ingredients:”Brewed Coffee”,
+ 		 					Allergens: “Not available”,
+							Customizations_Info: 
+							[
+								{
+		  						Size:
+								[
+									{
+
+										Is_Available:"Yes",
+										Size_Options: ["Short","Tall","Grande","Venti"]
+									},
+									{
+									Is_Available:"No",
+									}
+								]
+								},
+								{
+								Add_Ins:
+								[
+									{
+										Is_Available:"Yes",
+										Add_Ins_Option:["Whole_milk","Cream","Coconut_milk"]
+									},
+									{
+										Is_Available:"No",
+									}
+								]
+								},
+								{
+								Flavors:
+								[
+									{
+										Is_Available:"Yes",
+										Flavors_Options: ["Brown_sugar_syrup","Caramel_syrup","Rasperry_syrup"]   
+									},
+									{
+										Is_Available:"No",
+									}
+								]
+								},
+								{
+								Toppings:
+								[
+									{
+										Is_Available:"Yes",
+										Toppings_Options:["Barista_Cocoa_Powder","Caramel_Drizzle"]
+									},
+									{
+										Is_Available:"No",
+									}
+								]
+								},
+								{
+								Sweeteners:
+								[
+									{
+										Is_Available:"Yes",
+										Sweeteners_Options:["Honey","Cane Sugar"]
+									},
+									{
+										Is_Available:"No",
+									}
+								]
+								},
+								{
+								Blends:
+								[
+									{	
+										Is_Available:"Yes",
+										Blender_Options:
+										[
+											{
+												Blended_name:,
+												Quantity:2,
+											},
+
+											{
+												Blended_name:,
+												Quantity:2,
+											}
+										]
+									},
+									{
+										Is_Available:"No",
+									}
+								},
+								{
+								Milk:
+								[
+									{
+										Is_Available:"Yes",
+										Milk_Options:["","",""]//Values can be inside the ""
+									},
+									{
+										Is_Available:"No",
+									}
+								]
+								},
+								{
+								Juice:
+								[
+									{
+										Is_Available:"Yes",
+										Juice_Options:["","",""]//Values can be inside the ""
+									},
+									{
+										Is_Available:"No",
+									}
+								]
+								},
+								
+								Tea:
+								[
+									{
+										Is_Available:"Yes",
+										Tea_Options:["","",""]//Values can be inside the ""
+									},
+									{
+										Is_Available:"No",
+									}
+								]
+								}
+  							
+							]
+							Nutrition:
+							[     
+								{
+									Nutrition_Info: “Nutrition information is calculated based on our standard  
+													recipes. Only changing drink size will update this 	
+													information. Other customizations will not.”
+								},
+								{
+									Calories : “5”,	
+								},
+								{
+									Total Fat:
+									[
+										{
+											Saturated Fat:""
+										},
+										{
+											Trans_Fat:""
+										}
+									]
+								},
+								{
+
+									Nutrition_Tip:”  2,000 calories a day is used for general nutrition advice, but 
+					                        		calorie needs vary”
+								},
+								{
+					                Cholestrol:""
+								}
+								{
+					                Sodium:""
+								},
+								{
+					                Protein:""
+					            }
+							]
+				   		},
+					    {
+							//Adding Second Variety_id: info
+					    },
+					]//Closure of Variety info array
+				},
+				{	
+					//Adding Second_Sub_Menu_info
+				}
+			]//Closure_of_Sub_Menu info array
+		},
+		{
+			//Adding Menu Info
+
+		}
+	]//Closure of Main_menu_array
+
+	order:
+	[
+		{
+			Order_id:"O_1",
+			Customer_id:"Cust_1",
+			cart:
+				[
+					{
+						Menu:""
+					},
+					{
+						Sub_Menu:""
+					},
+					{
+	       				Variety:""
+					},
+					{
+	       				Size:""
+					},
+					{
+		  				Add_Ins:""
+					},
+					{
+						Flavors:""
+					},
+					{
+						Toppings:""
+					},
+					{
+						Sweeteners:""
+					},
+					{
+						Blends:""
+					},
+					{
+						Milk:"",
+					},
+					{
+						Juice:""
+					},
+					{
+						Tea:""
+					}
+				]//End of Cart Array
+			Total_Price:"",
+			Branh_location:"",
+            Order_type:"pickup",
+
+		},
+		{
+		
+			
+            //Order_id 2 info continues as same as above
+
+
+		}
+	] //Closure of Order Array
+	
+	Customer_Info:
+	[
+		{
+				Customer_id:"Cust_1",
+		    	Customer_name:"AAA",
+		    	Address:
+				{
+		    		Door#:"",
+					Street:"",
+					City:"",
+					State:"",
+					Zipcode:"",
+					Country:"",
+				}
+				Contact_#:""    
+
+		},
+		{
+
+				//Customer_id 2 details can be furnoshed as above
+
+		}
+	] //Closure of the Customer Array
+
+	    
+} //Closure of the collection
+
+    

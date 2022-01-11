@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple Map</title>
+    
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDHD5Azdp9yEur5KnVYJAUNf8ZAw6m40F4&libraries=places&callback=initMap"
+      defer
+    ></script>
+    <style type="text/css">
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }
+
+      /* Optional: Makes the sample page fill the window. */
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+    <script>
+      
+
+      function initMap() {
+          var input = document.getElementById('address');
+          let map = new google.maps.places.Autocomplete(input);
+          map.addListener('place_changed', function () {
+          var place = map.getPlace();
+      // place variable will have all the information you are looking for.
+       
+        document.getElementById("latitude").value = place.geometry['location'].lat();
+        document.getElementById("longitude").value = place.geometry['location'].lng();
+      });
+
+      }
+    </script>
+  </head>
+  <body>
+    <div>
+     <h3> Enter an adress and press the button</h3>
+     <button id="btn">Get LatLong</button>
+ 
+    <input id="address" type="text" placeholder="Enter address here" />
+    <div>
+        <p>Latitude:
+            <input type="text" id="latitude" readonly />
+        </p>
+        <p>Longitude:
+            <input type="text" id="longitude" readonly />
+        </p>
+    </div>
+</div>
+
+  </body>
+</html>

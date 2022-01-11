@@ -1,0 +1,115 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<script>
+
+function loadDoc() {
+  $.ajax({
+
+		 url: "PW_4.xml",
+		 dataType: "xml",
+		 success: function(data) {
+		 	  var title="",genre=[],director ="",cast="",synopsis="",score="";
+		    
+		    alert("file is loaded");
+		    $("table").append('<tr><td>Title</td><td>Genre</td><td>Director</td><td>Cast</td><td>Short description</td><td>IMDB-rating</td></</tr>');
+		    $(data).find('playlist').each(function(){
+
+		      $(this).find('movie').each(function(){
+							title = $(this).find('title').text();
+
+							genre=[];
+							
+							$(this).find('genre').each(function(i,v){
+
+									genre.push($(v).text());
+							});
+							genre.join(", ")
+
+							director = $(this).find('director').text();
+
+							cast=[];
+
+							$(this).find('cast').each(function(i,v){
+
+        			$(v).find('person').each(function(i,v){
+
+        		 			cast.push($(v).attr('name'));
+
+							});
+							cast.join(", ")
+					});
+
+							$(this).find('imdb-info').each(function(){
+
+                 synopsis = $(this).find('synopsis').text();
+                 score = $(this).find('score').text();
+							});
+
+			  var info = '<tr><td>' + title +'</td><td>' + director +'</td><td>' +  genre + '</td><td>' +  cast + '</td><td>' +  synopsis + '</td><td>' +  score + '</td></tr>';
+				$("table").append(info);
+
+      	});
+
+      
+
+       });
+
+		   
+     },
+
+     error: function() { alert("error loading file");  }
+
+
+
+
+				
+		    
+		    
+
+		 
+		 
+    
+
+
+});
+}
+</script>
+
+
+
+
+<style>
+	table,th,td {
+	  border : 1px solid black;
+	  border-collapse: collapse;
+	}
+	th,td {
+	  padding: 5px;
+	}
+
+	tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+</style>
+
+</head>
+
+
+<body>
+
+<h1>AJAX-JQuery Example</h1>
+
+<button type="button" onclick="loadDoc()">Get my CD collection</button>
+<br><br>
+<table id="demo"></table>
+
+
+
+</body>
+</html>
