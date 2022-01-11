@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.css">
+
+    <script type="text/javascript" src="PW3.js"></script>
+
+    <<link rel="stylesheet" href="PW3.css">
+
+    <script src="PW3.js"></script> 
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    
+
+    <script>
+      
+       $(document).ready(function(){
+
+          $("#plus").click(function(){
+
+             $("#add").toggle();
+
+
+          });
+
+          $("ul").on("mouseenter","li", function(){
+
+            $(this).find("span").show();
+
+
+          });
+
+          
+          $("ul").on("mouseleave","li", function(){
+
+            $(this).find("span").hide();
+
+
+          });
+
+          $("ul").on("click",".fa-trash",function(){
+
+             $(this).parentsUntil("ul").remove();
+
+          });
+
+         
+
+         $("ul").on("click","li", function(){
+
+            $(this).toggleClass("done");
+
+
+        });
+
+
+        $("#add").keypress(function(event){
+         
+          if (event.which == 13) {
+            $('ul').append(
+                '<li class="list-group-item"><span style="display: none;"><i class="fa fa-trash" id="trash"></i></span>'+$('#add').val() +'</li>');
+
+          document.getElementById("add").value = '';
+
+
+        }
+
+        });
+
+ });
+
+
+
+
+
+    </script>
+
+
+
+
+
+    <title>To do List</title>
+    </head>
+    <body>
+   
+        <div class="container">
+        <div class="row mt-5">
+
+          <div class="col-sm"></div>
+       
+       
+
+          <div class="col-sm">
+
+                <h3 style="color : white ;background-color: blue;">To do List <i class="fa fa-plus" id="plus" style="float : right"></i></h3>
+
+                <input type="text" id="add" placeholder="Add New Todo" style="width:100%">
+
+                <ul class="list-group list-group-flush">
+                    
+                      <li class="list-group-item"><span style="display: none;"><i class="fa fa-trash" id="trash"></i></span> Meet TA</li>
+                      <li class="list-group-item"><span style="display: none;"><i class="fa fa-trash" id="trash"></i></span> Post Grades</li>
+                      <li class="list-group-item"><span style="display: none;"><i class="fa fa-trash"  id="trash"></i></span> PTA Meeting</li>
+                
+            </ul>
+
+        </div>
+        <div class="col-sm"></div>
+        <div class="col-sm"></div>
+
+
+
+
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>
